@@ -243,3 +243,24 @@ def my_life(weights):
         me.live_one_day(seek)
     return round(me.living_day / 365, 2), round(me.happiness, 2), \
         round(me.wealth, 2), round(me.fame, 2)
+
+    
+    
+         
+results =[]
+
+for _ in range(2000):
+    #2000 times random run
+    weights = np.random.random(3)
+    weights /=np.sum(weights)
+    results.append((weights, my_life(weights)))  
+
+sorted_scores= sorted(results, key=lambda x:x[1][1], reverse=True)
+living_day, happiness, wealth, fame = my_life(sorted_scores[0][0])
+    
+print('lifing for {} years, obtained {} happiness accumulated {} wealth, and {} fame'.format(
+    living_day, happiness, wealth, fame))
+    
+print('best allocation is {} health, {} wealth, and {} on fame'. format(
+      sorted_scores[0][0][0],sorted_scores[0][0][1],sorted_scores[0][0][2]))
+       
