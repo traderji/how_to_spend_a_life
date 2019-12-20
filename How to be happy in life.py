@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Apr 12 13:42:06 2018
 
-@author: yji
-"""
 import numpy as np
 from abc import ABCMeta, abstractmethod
 import matplotlib.pyplot as plt
